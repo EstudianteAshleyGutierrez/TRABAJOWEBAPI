@@ -1,12 +1,11 @@
-import React,{Fragment,useEffect,useState} from 'react';
+import React,{Fragment,useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
-import {Modal,ModalBody,ModalFooter,ModalHeader, NavItem} from 'reactstrap';
+//import axios from 'axios';
+//import {Modal,ModalBody,ModalFooter,ModalHeader, NavItem} from 'reactstrap';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 
-const Registroproducto = () => {
-  // CERRAR SESION NO TOCAR
+const Registrofactura = () => {
   const cookies = new Cookies(); 
   let navigate = useNavigate(); 
   const cerrarSesion=()=>{
@@ -25,23 +24,13 @@ const Registroproducto = () => {
       navigate('/');
     }
   },[]);
-
-  //AQUI COMENZAR A PROGAMAR O INSTANCIAR 
-
-
-
-
-
-
-
-  
   return (
     <Fragment>
-        <h2 className='text-center'>REGISTRO DE PRODUCTO</h2>
-        <br/>
-        <button className='btn btn-danger' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
+      <h1 className='text-center'>REGISTRAR FACTURA</h1>
+      <button className='btn btn-danger' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
     </Fragment>
+
   )
 }
 
-export default Registroproducto
+export default Registrofactura

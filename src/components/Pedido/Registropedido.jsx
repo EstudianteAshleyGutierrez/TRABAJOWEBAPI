@@ -1,7 +1,7 @@
-import React,{Fragment,useEffect,useState} from 'react';
+import React,{Fragment,useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
-import {Modal,ModalBody,ModalFooter,ModalHeader, NavItem} from 'reactstrap';
+//import axios from 'axios';
+//import {Modal,ModalBody,ModalFooter,ModalHeader, NavItem} from 'reactstrap';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 

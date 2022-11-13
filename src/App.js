@@ -5,15 +5,15 @@ import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
 import Inicio from './components/Inicio'; 
 import Login from './components/Login'; 
 import Menu from './components/Menu'; 
-import Cargaselectproveedor from './components/Cargaselectproveedor'; 
+import Cargaselectproveedor from './components/Proveedor/Cargaselectproveedor'; 
 import Cargarporaño from './components/Cargarporaño';
-import DtPedidoFactura from './components/DtPedidoFactura';
-import ListRegisProve from './components/ListRegisProve';
-import Registropedido from './components/Registropedido';
-import Registrofactura from './components/Registrofactura';
-import Registroproducto from './components/Registroproducto';
-import Consultaproducto from './components/Consultaproducto';
-
+import DtPedidoFactura from './components/Pedido/DtPedidoFactura';
+import ListRegisProve from './components/Proveedor/ListRegisProve';
+import Registropedido from './components/Pedido/Registropedido';
+import Registrofactura from './components/Factura/Registrofactura';
+import Registroproducto from './components/Productos/ListRegisProd';
+import Consultaproducto from './components/Productos/Consultaproducto';
+ 
 
 function App() {
   return (
@@ -26,8 +26,8 @@ function App() {
           <Link to="/RegistrarProveedor" className='btn btn-info'>Consulta Y Registro Proveedor</Link>
           <Link to="/RegistrarFactura" className='btn btn-info'>Registro de Factura</Link>
           <Link to="/RegistrarPedido" className='btn btn-info'>Registro de Pedido</Link>
-          <Link to="/RegistrarProducto" className='btn btn-info'>Registro de Producto</Link>
-          <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link>
+          <Link to="/RegistrarProducto" className='btn btn-info'>Consulta y Registro de Producto</Link>
+          {/* <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link> */}
         </div>
         <hr/>
         <Routes>
@@ -40,7 +40,7 @@ function App() {
           <Route path='/RegistrarFactura' element={<Registrofactura/>}></Route>
           <Route path='/RegistrarPedido' element={<Registropedido/>}></Route>
           <Route path='/RegistrarProducto' element={<Registroproducto/>}></Route>
-          <Route path='/Consultaproducto' element={<Consultaproducto/>}></Route>
+          {/* <Route path='/Consultaproducto' element={<Consultaproducto/>}></Route> */}
         </Routes>
 
      </div>

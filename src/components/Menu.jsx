@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Menu.css';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
-import Cargaselectproveedor from './Cargaselectproveedor'; 
+//import Cargaselectproveedor from './Proveedor/Cargaselectproveedor'; 
 
 function Menu(){
 
