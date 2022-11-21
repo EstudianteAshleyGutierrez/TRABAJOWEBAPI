@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
@@ -23,11 +23,12 @@ const Registroproducto = () => {
     if (!cookies.get("id")) {
       navigate("/");
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   //Declaración de variables
 
-  const [nombreProducto, setNombreProducto] = useState("");
+  const [nombreProducto, setNombreProducto] = useState(null);
+  const [estadoPagina, setEstadoPagina] = useState(true);
 
   const handleChange = (e) => {
     setNombreProducto(e.target.value);
@@ -39,7 +40,7 @@ const Registroproducto = () => {
       <div className="containerInput">
         <input
           className="form-control inputbuscar w-50 "
-          value={nombreProducto}
+          value={nombreProducto || ""}
           id="busqueda"
           onChange={handleChange}
           placeholder="Ingrese el producto.."
@@ -47,7 +48,7 @@ const Registroproducto = () => {
       </div>
       <br />
 
-      <Consultaproducto nombreProducto={nombreProducto} cerrarSesion={cerrarSesion}/>      
+      <Consultaproducto nombreProducto={nombreProducto} cerrarSesion={cerrarSesion} setNombreProducto={setNombreProducto} estadoPagina={estadoPagina} setEstadoPagina={setEstadoPagina}/>      
     </>
   );
 };
