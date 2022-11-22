@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 //import { useEffect } from "react";
 //import { useEffect } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
@@ -27,9 +27,36 @@ const EditarDetalle = ({
     funcionCerrarEdicion()
   }
 
+  const [cantidadpedido, setcantidadpedido] = useState(0)
+  const [listaProductos, setListaProductos] = useState([]);
+
+ 
+  const retornarcantidad = async () => {
+    await axios
+    .get("http://localhost:4000/detPedPro")
+    .then((response) => {
+      setcantidadpedido(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  const cargarProductos = async () => {
+    const lista = await axios.get("http://localhost:4000/producto");
+    setListaProductos(lista.data);
+  }
+
+  useEffect(() => {
+    retornarcantidad();
+    cargarProductos();
+  }, []);
+
  /*  useEffect(() => {
     console.log( (new Date(detalleEditar.Fecha_Produccion).getMonth()+1) >= 10 ? new Date(detalleEditar.Fecha_Produccion).getFullYear() + "-" + (new Date(detalleEditar.Fecha_Produccion).getMonth()+1) + "-" + (new Date(detalleEditar.Fecha_Produccion).getDate() >= 10 ? new Date(detalleEditar.Fecha_Produccion).getDate() : "0"+new Date(detalleEditar.Fecha_Produccion).getDate()):new Date(detalleEditar.Fecha_Produccion).getFullYear() + "-0" + (new Date(detalleEditar.Fecha_Produccion).getMonth()+1) + "-" + (new Date(detalleEditar.Fecha_Produccion).getDate() >= 10 ? new Date(detalleEditar.Fecha_Produccion).getDate() : "0"+new Date(detalleEditar.Fecha_Produccion).getDate()) );
   }, [detalleEditar]); */
+
+  var nrofilas = cantidadpedido.length;
 
   return (
     <>
@@ -38,6 +65,8 @@ const EditarDetalle = ({
         <ModalBody>
           <label className="form-label">Id del pedido: </label>
           <input
+            min="1" 
+            max={nrofilas} 
             defaultValue={detalleEditar.IdPedido}
             name="IdPedido"
             type={"number"}
@@ -45,13 +74,12 @@ const EditarDetalle = ({
             onChange={handleChange}
           ></input>
           <label className="form-label mt-2">Id del producto:</label>
-          <input
-          defaultValue={detalleEditar.IdProducto}
-            name="IdProducto"
-            type={"number"}
-            className="form-control"
-            onChange={handleChange}
-          ></input>
+          <select onChange={handleChange} defaultValue={detalleEditar.IdProducto} name="IdProducto" className="form-select">
+            <option value={"DEFAULT"}>Seleccione una opcion</option>
+            {
+              listaProductos.map((p) => (<option key={p.IdProducto} value={p.IdProducto}>{p.NombreProducto}</option>))
+            }
+          </select>
           <label className="form-label mt-2">Cantidad:</label>
           <input
           defaultValue={detalleEditar.CantidadPedido}

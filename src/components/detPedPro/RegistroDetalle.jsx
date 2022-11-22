@@ -35,7 +35,8 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
   }
 
 
-  const [cantidadpedido, setcantidadpedido] = useState(0)
+  const [cantidadpedido, setcantidadpedido] = useState(0);
+  const [listaProductos, setListaProductos] = useState([]);
 
  
   const retornarcantidad = async () => {
@@ -49,10 +50,15 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
     });
   }
 
+  const cargarProductos = async () => {
+    const lista = await axios.get("http://localhost:4000/producto");
+    setListaProductos(lista.data);
+  }
+
   useEffect(() => {
     retornarcantidad();
-    
-  }, [cantidadpedido]);
+    cargarProductos();
+  }, []);
 
 
   var nrofilas = cantidadpedido.length;
@@ -65,7 +71,13 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
           <label className="form-label">Id del pedido: </label>
           <input name="IdPedido" type={"number"}  min ='1' max={nrofilas} className="form-control" onChange={handleChange}></input>
           <label className="form-label mt-2">Id del producto:</label>
-          <input name="IdProducto" type={"number"}  className="form-control" onChange={handleChange}></input>
+          <select onChange={handleChange} name="IdProducto" className="form-select">
+            <option value={"DEFAULT"}>Seleccione una opcion</option>
+            {
+              listaProductos.map((p) => (<option key={p.IdProducto} value={p.IdProducto}>{p.NombreProducto}</option>))
+            }
+          </select>
+          {/* <input name="IdProducto" type={"number"}  className="form-control" onChange={handleChange}></input> */}
           <label className="form-label mt-2">Cantidad:</label>
           <input name="CantidadPedido" type={"number"} className="form-control" onChange={handleChange}></input>
           <label className="form-label mt-2">Monto:</label>
