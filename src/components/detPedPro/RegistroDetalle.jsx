@@ -1,6 +1,7 @@
 //import { Modal } from "bootstrap";
 import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 //import { useEffect } from "react";
 import { useState } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
@@ -16,6 +17,9 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
     "Fecha_Vencimiento": ""
   })
 
+  
+
+
   const handleChange = (e) => {
     setDetalleRegistrar({
       ...detalleRegistrar,
@@ -30,15 +34,38 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
     funcionCerrarRegistro()
   }
 
+
+  const [cantidadpedido, setcantidadpedido] = useState(0)
+
+ 
+  const retornarcantidad = async () => {
+    await axios
+    .get("http://localhost:4000/detPedPro")
+    .then((response) => {
+      setcantidadpedido(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  useEffect(() => {
+    retornarcantidad();
+    
+  }, [cantidadpedido]);
+
+
+  var nrofilas = cantidadpedido.length;
+
   return (
     <>
       <Modal isOpen={eventoRegistro}>
         <ModalHeader>Registro de detalle</ModalHeader>
         <ModalBody>
           <label className="form-label">Id del pedido: </label>
-          <input name="IdPedido" type={"number"} className="form-control" onChange={handleChange}></input>
+          <input name="IdPedido" type={"number"}  min ='1' max={nrofilas} className="form-control" onChange={handleChange}></input>
           <label className="form-label mt-2">Id del producto:</label>
-          <input name="IdProducto" type={"number"} className="form-control" onChange={handleChange}></input>
+          <input name="IdProducto" type={"number"}  className="form-control" onChange={handleChange}></input>
           <label className="form-label mt-2">Cantidad:</label>
           <input name="CantidadPedido" type={"number"} className="form-control" onChange={handleChange}></input>
           <label className="form-label mt-2">Monto:</label>
