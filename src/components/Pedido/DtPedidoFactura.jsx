@@ -38,28 +38,20 @@ const DtPedidoFactura = () => {
 
         <thead>
           <tr>
-          <th>Id Factura</th>
-          <th>Fecha de Emision</th>
           <th>Nombre Producto</th>
           <th>Cantidad Producto</th>
           <th>Precio Producto</th>
           <th>Nombre Proveedor</th>
-          <th>Subtotal</th>
-          <th>Igv</th>
           <th>Monto Total</th>
           </tr>
         </thead>
         <tbody className='text-start'>
           {pedidos.map(x=>(
-            <tr key={x.codFactura}>
-            <td>{x.codFactura}</td>
-            <td>{x.fechaEmision}</td>
+            <tr key={x.nomprod}>
             <td>{x.nomprod}</td>
             <td>{x.cantpedido}</td>
             <td>{x.precioprod}</td>
             <td>{x.nomprove}</td>
-            <td>{x.subtotal}</td>
-            <td>{x.igv}</td>
             <td>{x.totalfactura}</td>
         
           </tr>

@@ -25,7 +25,7 @@ function App() {
           <Link to="/Cargaselectproveedor" className='btn btn-info'>Consulta Pedido por Proveedor</Link>
           <Link to="/PedidoporAño" className='btn btn-info'>Pedido por el Año Pedido</Link>
           <Link to="/RegistrarProveedor" className='btn btn-info'>Consulta Y Registro Proveedor</Link>
-          <Link to="/RegistrarFactura" className='btn btn-info'>Registro de Factura</Link>
+          <Link to="/RegistrarFactura" className='btn btn-info'>Lista de Facturas</Link>
           <Link to="/RegistrarPedido" className='btn btn-info'>Registro de Pedido</Link>
           <Link to="/RegistrarProducto" className='btn btn-info'>Consulta y Registro de Producto</Link>
           <Link to="/RegistrarCategoria" className='btn btn-info'>Consulta y Registro de Categoria</Link>
