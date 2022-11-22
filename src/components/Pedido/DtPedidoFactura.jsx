@@ -39,6 +39,7 @@ const DtPedidoFactura = () => {
         <thead>
           <tr>
           <th>Nombre Producto</th>
+          <th>Imagen</th>
           <th>Cantidad Producto</th>
           <th>Precio Producto</th>
           <th>Nombre Proveedor</th>
@@ -49,6 +50,7 @@ const DtPedidoFactura = () => {
           {pedidos.map(x=>(
             <tr key={x.nomprod}>
             <td>{x.nomprod}</td>
+            <td>{x.img}</td>
             <td>{x.cantpedido}</td>
             <td>{x.precioprod}</td>
             <td>{x.nomprove}</td>
