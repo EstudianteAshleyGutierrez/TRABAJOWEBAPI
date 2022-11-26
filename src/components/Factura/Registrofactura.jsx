@@ -4,6 +4,7 @@ import axios from 'axios';
 //import {Modal,ModalBody,ModalFooter,ModalHeader, NavItem} from 'reactstrap';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
+import {CSVLink} from 'react-csv';
 
 const Registrofactura = () => {
   const cookies = new Cookies(); 
@@ -49,6 +50,7 @@ const Registrofactura = () => {
     <Fragment>
       <h1 className='text-center'>LISTADO DE LAS FACTURAS</h1>
       <button className='btn btn-danger' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
+      <CSVLink data={data} className="btn btn-success mb-3">Export User Data</CSVLink>
       <br/>
       <div>
         <h5 className="text-primary">Cantidad de Facturas Emitidas: {nrofilas}</h5>

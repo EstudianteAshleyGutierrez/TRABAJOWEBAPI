@@ -4,6 +4,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import ConsultaCategoria from './ConsultaCategoria'
 import RegistroCategoria from './RegistroCategoria'
+import {CSVLink} from 'react-csv';
+
+
+
 
 const ListRegisCat = () => {
 
@@ -22,7 +26,9 @@ const ListRegisCat = () => {
   return (
     <>
         <h1 className='text-center'>Registro y Consulta de Categoria</h1>
+        <CSVLink data={listaCategorias} className="btn btn-success mb-3">Export User Data</CSVLink>
         <br/>
+      
         <div className='container'>
             <RegistroCategoria setEstadoPagina={setEstadoPagina} estadoPagina={estadoPagina}/>
             <ConsultaCategoria listaCategorias={listaCategorias} setEstadoPagina={setEstadoPagina} estadoPagina={estadoPagina}/>

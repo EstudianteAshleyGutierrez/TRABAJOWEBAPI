@@ -4,6 +4,9 @@ import axios from "axios";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
+import {CSVLink} from 'react-csv';
+
+
 
 const ListRegisProve = () => {
   const cookies = new Cookies();
@@ -19,11 +22,13 @@ const ListRegisProve = () => {
     navigate("/");
   };
 
+
   useEffect(() => {
     if (!cookies.get("id")) {
       navigate("/");
     }
   }, []);
+  
 
   const baseUrl = "https://localhost:44315/api/BDTambo";
   const [data, setdata] = useState([]);
@@ -197,6 +202,7 @@ const ListRegisProve = () => {
       {"   "}
       <br />
       <br />
+      <CSVLink data={data} className="btn btn-success mb-3">Export User Data</CSVLink>
       <table className="table table-bordered table- table-striped">
         <thead>
           <tr>

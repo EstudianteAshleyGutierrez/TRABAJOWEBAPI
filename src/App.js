@@ -15,6 +15,7 @@ import Registroproducto from './components/Productos/ListRegisProd';
 //import Consultaproducto from './components/Productos/Consultaproducto';
  import ListRegisCat from './components/categoria/ListRegisCat';
 import ListRegisDet from './components/detPedPro/ListRegisDet';
+import Presentacion from './components/Factura/Presentacion';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Link to="/RegistrarProducto" className='btn btn-info'>Consulta y Registro de Producto</Link>
           <Link to="/RegistrarCategoria" className='btn btn-info'>Consulta y Registro de Categoria</Link>
           <Link to="/RegistrarDetalle" className='btn btn-info'>Consulta y Registro de Detalle</Link>
+          <Link to="/Presentacion" className='btn btn-secondary'>Presentacion</Link>
           
           {/* <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link> */}
         </div>
@@ -46,6 +48,7 @@ function App() {
           <Route path='/RegistrarProducto' element={<Registroproducto/>}></Route>
           <Route path='/RegistrarCategoria' element={<ListRegisCat/>}></Route>
           <Route path='/RegistrarDetalle' element={<ListRegisDet/>}></Route>
+          <Route path='/Presentacion' element={<Presentacion/>}></Route>
           {/* <Route path='/Consultaproducto' element={<Consultaproducto/>}></Route> */}
         </Routes>
 
