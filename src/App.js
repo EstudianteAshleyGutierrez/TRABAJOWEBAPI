@@ -2,7 +2,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Fragment}  from 'react';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
-//import Inicio from './components/Inicio'; 
 import Login from './components/Login'; 
 import Menu from './components/Menu'; 
 import Cargaselectproveedor from './components/Proveedor/Cargaselectproveedor'; 
@@ -16,6 +15,7 @@ import Registroproducto from './components/Productos/ListRegisProd';
  import ListRegisCat from './components/categoria/ListRegisCat';
 import ListRegisDet from './components/detPedPro/ListRegisDet';
 import Presentacion from './components/Factura/Presentacion';
+import Grafico from './components/Factura/Grafico';
 
 function App() {
   return (
@@ -31,8 +31,10 @@ function App() {
           <Link to="/RegistrarProducto" className='btn btn-info'>Consulta y Registro de Producto</Link>
           <Link to="/RegistrarCategoria" className='btn btn-info'>Consulta y Registro de Categoria</Link>
           <Link to="/RegistrarDetalle" className='btn btn-info'>Consulta y Registro de Detalle</Link>
-          <Link to="/Presentacion" className='btn btn-secondary'>Presentacion</Link>
+          <Link to="/Grafico" className='btn btn-warning'>Grafico Estadistico de Facturas</Link>
+          <Link to="/Presentacion" className='btn btn-secondary'>TERMINOS Y CONDICIONES</Link>
           
+         
           {/* <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link> */}
         </div>
         <hr/>
@@ -49,6 +51,7 @@ function App() {
           <Route path='/RegistrarCategoria' element={<ListRegisCat/>}></Route>
           <Route path='/RegistrarDetalle' element={<ListRegisDet/>}></Route>
           <Route path='/Presentacion' element={<Presentacion/>}></Route>
+          <Route path='/Grafico' element={<Grafico/>}></Route>
           {/* <Route path='/Consultaproducto' element={<Consultaproducto/>}></Route> */}
         </Routes>
 

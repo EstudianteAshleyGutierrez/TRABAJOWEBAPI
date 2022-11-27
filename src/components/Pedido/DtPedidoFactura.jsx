@@ -4,7 +4,7 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 import {useParams} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import GraficoCircular from '../Factura/GraficoCircular';
 const DtPedidoFactura = () => {
 
   let navigate = useNavigate(); 
@@ -62,6 +62,9 @@ const DtPedidoFactura = () => {
         </tbody>
        
         </table>
+        <GraficoCircular
+         xfech={xfecha}
+        />
    </Fragment>
   )
 }

@@ -32,8 +32,9 @@ function Menu(){
         <br/>
         <button className='btn btn-danger' onClick={()=>cerrarSesion()}>Cerrar Sesion</button>
         <br />
-        <h1>Bienvenidos al sistema</h1>
-        <h2>Usuario: {cookies.get('nombre')}, {cookies.get('apellido_paterno')}</h2>
+        <br />
+        <h1 className='titulosistema'><b>BIENVENIDO AL SISTEMA DE COMPRAS QUE REALIZA TAMBO</b></h1>
+        <h2 className='user'>Usuario: {cookies.get('nombre')}, {cookies.get('apellido_paterno')}</h2>
       </div>
     </Fragment>
      

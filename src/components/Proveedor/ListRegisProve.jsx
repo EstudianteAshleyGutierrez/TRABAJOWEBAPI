@@ -8,6 +8,7 @@ import {CSVLink} from 'react-csv';
 
 
 
+
 const ListRegisProve = () => {
   const cookies = new Cookies();
   let navigate = useNavigate();
@@ -202,7 +203,7 @@ const ListRegisProve = () => {
       {"   "}
       <br />
       <br />
-      <CSVLink data={data} className="btn btn-success mb-3">Export User Data</CSVLink>
+      <CSVLink data={data} className="btn btn-warning mb-3">EXPORTAR ARCHIVO</CSVLink>
       <table className="table table-bordered table- table-striped">
         <thead>
           <tr>

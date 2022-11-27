@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
-
-.titulosistema{
- text-align: center;
- color: rgb(145, 64, 6);
- font-family: 'Preahvihear', sans-serif;
-}
-.user{
-    font-family: 'Acme', sans-serif;
-    font-size: 32pt;
+.subtitulo{
+    color: chocolate;
+    font-family: 'Potta One', cursive;
 }
