@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
+import './css/Categoria.css'
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
@@ -46,17 +47,20 @@ const ListRegisCat = () => {
 
   return (
     <>
-        <h1 className='text-center'>Registro y Consulta de Categoria</h1>
-        <CSVLink data={listaCategorias} className="btn btn-success mb-3">Export User Data</CSVLink>{ ' | '}
-        <button className="btn btn-danger" onClick={() => cerrarSesion()}>
-        CERRAR SESION
+        <h1 className='text-center titulosistema mb-3'><b>REGISTRO Y CONSULTA DE CATEGORIA</b></h1>
+        <CSVLink data={listaCategorias} className="btn botoncito titulosistema mb-3 mt-3 ">Export User Data</CSVLink>{ '    |    '}
+        <button className="btn btn-danger text-light titulosistema mb-3 mt-3" onClick={() => cerrarSesion()}>
+        Cerrar Sesion
       </button>
         <br/>
-      
+        <br/>
+
         <div className='container'>
             <RegistroCategoria setEstadoPagina={setEstadoPagina} estadoPagina={estadoPagina}/>
             <ConsultaCategoria listaCategorias={listaCategorias} setEstadoPagina={setEstadoPagina} estadoPagina={estadoPagina}/>
         </div>
+
+        
     </>
   )
 }

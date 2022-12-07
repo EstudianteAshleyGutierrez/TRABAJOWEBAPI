@@ -30,11 +30,19 @@ function Menu(){
     <Fragment>
         <div className='containerMenu'>
         <br/>
-        <button className='btn btn-danger' onClick={()=>cerrarSesion()}>Cerrar Sesion</button>
+        <button className='btn botoncito' onClick={()=>cerrarSesion()}>Cerrar Sesion</button>
         <br />
         <br />
-        <h1 className='titulosistema'><b>BIENVENIDO AL SISTEMA DE COMPRAS QUE REALIZA TAMBO</b></h1>
-        <h2 className='user'>Usuario: {cookies.get('nombre')}, {cookies.get('apellido_paterno')}</h2>
+        <div className='card bg-dark'>
+        <br />
+        <br />
+          <h1 className='sub'><b>BIENVENIDO !!</b></h1>
+          <h3 className='sub'><b>AHORA TIENES ACCESO AL SISTEMA DE COMPRAS DE TAMBO</b></h3>
+          <br/>
+          <h2 className='sub'>Usuario: {cookies.get('nombre')}, {cookies.get('apellido_paterno')}</h2>
+          <br />
+          <br />
+        </div>
       </div>
     </Fragment>
      

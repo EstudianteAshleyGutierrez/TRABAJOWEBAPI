@@ -48,16 +48,19 @@ const Registrofactura = () => {
 
   return (
     <Fragment>
-      <h1 className='text-center'>LISTADO DE LAS FACTURAS</h1>
-      <button className='btn btn-danger' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
-      <CSVLink data={data} className="btn btn-success mb-3">EXPORTAR ARCHIVO CSV</CSVLink>
+      <h1 className='text-center titulosistema '><b>LISTADO DE LAS FACTURAS</b></h1>
+      <br />
+      <button className='btn btn-danger text-light titulosistema' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
+      <CSVLink data={data} className="btn botoncito">EXPORTAR ARCHIVO CSV</CSVLink>
       <br/>
+      <br/>
+
       <div>
-        <h5 className="text-primary">Cantidad de Facturas Emitidas: {nrofilas}</h5>
+        <h5 className="text-dark titulosistema">Cantidad de Facturas Emitidas: {nrofilas}</h5>
       </div>
       <br />
-      <table className="table table-bordered table- table-striped">
-        <thead>
+      <table className="table table-bordered table- table-hover">
+        <thead className='text-center table-dark text-light titulosistema'>
           <tr>
             <th>Cod Factura</th>
             <th>Fecha de Emision</th>
@@ -72,14 +75,14 @@ const Registrofactura = () => {
         <tbody className="text-start">
           {data.map((ordenes) => (
             <tr key={ordenes.codFactura}>
-              <td>{ordenes.codFactura}</td>
-              <td>{ordenes.fechaEmision}</td>
+              <td className='text-center'>{ordenes.codFactura}</td>
+              <td className='text-center'>{ordenes.fechaEmision}</td>
               <td>{ordenes.nomprod}</td>
-              <td>{ordenes.cantpedido}</td>
-              <td>{ordenes.precioprod}</td>
-              <td>{ordenes.subtotal}</td>
-              <td>{ordenes.igv}</td>
-              <td>{ordenes.totalfactura}</td>
+              <td className='text-center'>{ordenes.cantpedido}</td>
+              <td className='text-center'>{ordenes.precioprod}</td>
+              <td className='text-center'>{ordenes.subtotal}</td>
+              <td className='text-center'>{ordenes.igv}</td>
+              <td className='text-center'>{ordenes.totalfactura}</td>
             </tr>
           ))}
         </tbody>

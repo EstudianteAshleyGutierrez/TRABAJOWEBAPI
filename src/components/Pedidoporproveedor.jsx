@@ -1,5 +1,6 @@
 import React,{Fragment,useEffect,useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/Login.css';
 import axios from 'axios';
 
 const Pedidoporproveedor = ({idprove}) => {
@@ -27,35 +28,44 @@ const Pedidoporproveedor = ({idprove}) => {
  
   return (
    <Fragment>
-      <h4 className='text-primary' >Cantidad Total: {nrofilas}</h4>
-      <table className='table table-bordered table- table-striped'>
-    <thead>
-      <tr>
-      <th>Cod Pedido</th>
-      <th>Nombre Proveedor</th>
-      <th>Cantidad de Pedido</th>
-      <th>Fecha Pedido</th>
-      <th>Fecha Entrega</th>
-      <th>Monto Total</th>
+      <h5 className='text-dark titulosistema' >Cantidad Total: {nrofilas}</h5>
+      <br/>
+      <table className="table table-bordered table-hover">
+    <thead className="table-dark">
+      <tr className='text-light titulosistema'>
+      <th className="text-center">CODIGO PEDIDO</th>
+      <th className="text-center">NOMBRE PROVEEDOR</th>
+      <th className="text-center">CANTIDAD</th>
+      <th className="text-center">FECHA PEDIDO</th>
+      <th className="text-center">FECHA ENTREGA</th>
+      <th className="text-center">MONTO TOTAL</th>
       
       </tr>
     </thead>
     <tbody className='text-start'>
       {consulpedido.map(x =>(
         <tr key={x.codpedido}>
-        <td>{x.codpedido}</td>
-        <td>{x.nomproveedor}</td>
-        <td>{x.cantidadpedido}</td>
-        <td>{x.fechaPedido}</td>
-        <td>{x.fechaentrega}</td>
-        <td>{x.montototal}</td>
+        <td className="text-center">{x.codpedido}</td>
+        <td className="text-center">{x.nomproveedor}</td>
+        <td className="text-center">{x.cantidadpedido}</td>
+        <td className="text-center">{x.fechaPedido}</td>
+        <td className="text-center">{x.fechaentrega}</td>
+        <td className="text-center">{x.montototal}</td>
       </tr>
       ))}
         
     </tbody>
     <br/>
-    <h4><b>Cantidad Total de los Pedidos: {cantotal}</b></h4>
-    <h4><b>Suma Total de los Pedidos: {sumacantidad}</b></h4>
+    <br/>
+
+    <div className='card bg-dark'>
+      <br/>
+      <h5 className='text-light titulosistema text-right'>Cantidad Total de los Pedidos : {cantotal}</h5>
+      <h5 className='text-light titulosistema text-right'>Suma Total de los Pedidos     : {sumacantidad}</h5>
+      <br/>
+    </div>
+    <br/>
+
     </table>
    </Fragment>
   )

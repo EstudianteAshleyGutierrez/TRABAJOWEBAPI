@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.botoncito{
+  color: rgb(255, 255, 255);
+  font-family: 'Preahvihear', sans-serif;
+  background-color:rgb(46, 156, 170);
+
+ }
+
+ .botoncito1{
+  color: rgb(255, 255, 255);
+  font-family: 'Preahvihear', sans-serif;
+  background-color:rgb(37, 114, 124);
+ }

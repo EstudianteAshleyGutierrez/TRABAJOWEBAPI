@@ -42,26 +42,43 @@ const Cargarporaño = () => {
     <Fragment>
     <div className='text-center'>
         <div className='form-group'>
-        <h1>Consulta de Pedidos por Año</h1>
-            <div>
-            <h4><b>Seleccione Año de Pedido</b></h4>
-            <select name='cboanio' className='form-control' value={anio}
-              onChange={(e)=>recuperaranio(e)}>
-              <option value='seleccionar'>Seleccionar Año</option>
-              {
-                anios.map(item=>(
-                  <option key={item.año} value={item.año}>
-                        {item.año}
-                  </option>
-                ))
-              }
+        <h1 className='titulosistema'><b>CONSULTA DE PEDIDOS POR AÑO</b></h1>
+        <br/>
+        <div className='text-center'>
+      <button className='btn botoncito' onClick={()=>cerrarSesion()}>Cerrar Sesion</button>
+            <br /><br/>
 
-            </select>
+        <div className='form-group'>
+        <div className="col-lg-5 float-lg-start card mb-3">
+            <div className="card-header bg-dark ">
+              <h5 className="text-center text-light mt-2 mb-2 titulosistema">SELECCIONE EL AÑO DEL PEDIDO </h5>
             </div>
-            <br/>
-              <button className='btn btn-danger' onClick={()=>cerrarSesion()}>Cerrar Sesion</button>
-            <br />
-          <hr/>
+            <div className="card-body form-group">
+                <select name='cboanio' className='form-control' value={anio}
+                        onChange={(e)=>recuperaranio(e)}>
+                        <option value='seleccionar'>Seleccionar Año</option>
+                        {
+                          anios.map(item=>(
+                            <option key={item.año} value={item.año}>
+                                  {item.año}
+                            </option>
+                          ))
+                        }
+
+                      </select>  
+            </div>
+        </div>
+    
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      </div>
+    </div>
           <div>
               <PedidoporAño
                 xanios={anio}

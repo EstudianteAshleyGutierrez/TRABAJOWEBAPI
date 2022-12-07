@@ -64,7 +64,10 @@ function Login(props){
         <div className='containerPrincipal'>
             <div className='containerLogin'>
                 <div className='form-group'>
-                    <label>Usuario: </label>
+                    <h1 className='titulosistema'>LOGIN</h1>
+                    <h5 className='sub-titulo'>ACCEDE AL SISTEMA</h5>
+                    <br/>
+                    <label className='sub'>Usuario: </label>
                     <br/>
                     <input type="text"
                     className='form-control'
@@ -72,7 +75,7 @@ function Login(props){
                     onChange={handleChange}
                     />
                     <br/>
-                    <label>Contraseña: </label>
+                    <label className='sub'>Contraseña: </label>
                     <br/>
                     <input type="password"
                     className='form-control'
@@ -80,7 +83,7 @@ function Login(props){
                     onChange={handleChange}
                     />
                     <br/>
-                    <button className='btn btn-primary' onClick={()=>iniciarSesion()}>INICIAR SESION</button>
+                    <button className='btn botoncito form-control' onClick={()=>iniciarSesion()}>INICIAR SESION</button>
                 </div>
             </div>
 

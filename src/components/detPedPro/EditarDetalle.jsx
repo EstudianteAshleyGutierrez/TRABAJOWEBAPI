@@ -61,7 +61,7 @@ const EditarDetalle = ({
   return (
     <>
       <Modal isOpen={eventoEditar}>
-        <ModalHeader>Editar detalle con id {detalleEditar.Id}</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema text-center">EDITAR DETALLE CON EL CODIGO : {detalleEditar.Id}</ModalHeader>
         <ModalBody>
           <label className="form-label">Id del pedido: </label>
           <input
@@ -122,9 +122,9 @@ const EditarDetalle = ({
           ></input>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-success" onClick={editarDetalle}>Editar</button>
+          <button className="btn botoncito" onClick={editarDetalle}>Editar</button>
           {" | "}
-          <button className="btn btn-danger" onClick={funcionCerrarEdicion}>
+          <button className="btn btn-danger text-light titulosistema" onClick={funcionCerrarEdicion}>
             Cerrar
           </button>
         </ModalFooter>

@@ -72,7 +72,7 @@ const RegistroProducto = ({
   return (
     <>
       <Modal isOpen={activarRegistro}>
-        <ModalHeader>Registro de Producto</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema text-center">REGISTRAR PRODUCTO</ModalHeader>
         <ModalBody>
           <label className="form-text">Nombre del producto: </label>
           <input
@@ -82,7 +82,7 @@ const RegistroProducto = ({
             placeholder="Ingrese el nombre del producto"
             onChange={handlechange}
           />
-          <label className="form-text">Descripción del producto: </label>
+          <label className="form-text mt-3">Descripción del producto: </label>
           <input
             name="descripcion"
             className="form-control mt-2"
@@ -113,11 +113,11 @@ const RegistroProducto = ({
           />
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-success" onClick={registrarProducto}>
+          <button className="btn botoncito" onClick={registrarProducto}>
             Registrar
           </button>
           {" | "}
-          <button className="btn btn-danger" onClick={funcionCerrarRegistro}>
+          <button className="btn btn-danger text-light titulosistema" onClick={funcionCerrarRegistro}>
             Cerrar
           </button>
         </ModalFooter>

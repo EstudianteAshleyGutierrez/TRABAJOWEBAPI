@@ -77,16 +77,16 @@ const peticionApi=async()=>{
    
   return (
     <div  style={{width: '100%', height: '500px'}}>
-   <button className="btn btn-danger" onClick={() => cerrarSesion()}>
+   <button className="btn botoncito" onClick={() => cerrarSesion()}>
         CERRAR SESION
       </button>
  <br/>
 
-
  <br/>
-   <h2>Cantidad de Productos que se recepcionaron en Factura</h2>
+ <br/>
+   <h2 className='titulosistema'><b>Cantidad de Productos que se recepcionaron en Factura</b></h2>
    <br/>
-  
+   <br/>
     <Bar data={data} options={opciones}/>
    </div>
   )

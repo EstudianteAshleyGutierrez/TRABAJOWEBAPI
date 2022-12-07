@@ -38,13 +38,13 @@ function Menu (){
        <Router>
      <div className='container mt-5'>
         <div className='btn-group p-5'>
-          <Link to="/Cargaselectproveedor" className='btn btn-info'>Consulta Pedido por Proveedor</Link>
-          <Link to="/PedidoporAño" className='btn btn-info'>Pedido por el Año Pedido</Link>
-          <Link to="/RegistrarProveedor" className='btn btn-info'>Consulta Y Registro Proveedor</Link>
-          <Link to="/RegistrarFactura" className='btn btn-info'>Registro de Factura</Link>
-          <Link to="/RegistrarPedido" className='btn btn-info'>Registro de Pedido</Link>
-          <Link to="/RegistrarProducto" className='btn btn-info'>Registro de Producto</Link>
-          <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link>
+          <Link to="/Cargaselectproveedor" className='btn botoncito'>Consulta Pedido por Proveedor</Link>
+          <Link to="/PedidoporAño" className='btn botoncito'>Pedido por el Año Pedido</Link>
+          <Link to="/RegistrarProveedor" className='btn botoncito'>Consulta Y Registro Proveedor</Link>
+          <Link to="/RegistrarFactura" className='btn botoncito'>Registro de Factura</Link>
+          <Link to="/RegistrarPedido" className='btn botoncito'>Registro de Pedido</Link>
+          <Link to="/RegistrarProducto" className='btn botoncito'>Registro de Producto</Link>
+          <Link to="/Consultaproducto" className='btn botoncito'>Consulta de Producto</Link>
         </div>
         <hr/>
         <Routes>

@@ -53,12 +53,12 @@ const EditarProducto = ({ activarEdicion, funcionCerrarEdicion, producto, setPro
   return (
     <>
       <Modal isOpen={activarEdicion}>
-        <ModalHeader>Editar producto con id {producto.IdProducto || ""}</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema">EDITAR LA PRODUCTO CON EL CODIGO : {producto.IdProducto || ""}</ModalHeader>
         <ModalBody>
           <img className="figure-img mt-2 d-block mx-auto" src={producto.ImagenProducto || "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"} alt="" width={"150px"} height={"150px"}/><br/>
           <label className='form-text'>Nombre del producto: </label>
           <input value={producto.NombreProducto || ""} name='NombreProducto' className='form-control mt-2' type="text" placeholder='Ingrese el nombre del producto' onChange={handleChange}/>
-          <label className='form-text'>Descripción del producto: </label>
+          <label className='form-text mt-3'>Descripción del producto: </label>
           <input value={producto.descripcion || ""} name='descripcion' className='form-control mt-2' type="text" placeholder='Ingrese una descripción para el producto' onChange={handleChange}/>
           <label className='form-text mt-3'>Categoria del producto: </label>
           <select defaultValue={producto.IdCategoria} name='IdCategoria' className='form-select mt-2' placeholder='Seleccione una categoria' onChange={handleChange}>
@@ -74,13 +74,13 @@ const EditarProducto = ({ activarEdicion, funcionCerrarEdicion, producto, setPro
           <input name="ProductImage" onChange={handleChangeImg} className='form-control mt-2' type="file"/>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-success" 
+          <button className="btn botoncito" 
           onClick={editarProducto}
           >
             Editar
           </button>
           {" | "}
-          <button className="btn btn-danger" onClick={funcionCerrarEdicion}>
+          <button className="btn btn-danger text-light titulosistema" onClick={funcionCerrarEdicion}>
             Cerrar
           </button>
         </ModalFooter>

@@ -27,8 +27,8 @@ const EditarCategoria = ({activarEdicion, funcionCerrarFormEdicion, categoriaEdi
 
   return (
     <>
-      <Modal isOpen={activarEdicion}>
-        <ModalHeader>Editar Categoria con id {categoriaEditar.IdCategoria || 0}</ModalHeader>
+      <Modal isOpen={activarEdicion} >
+        <ModalHeader className="bg-dark text-light titulosistema">EDITAR LA CATEGORIA CON EL CODIGO : {categoriaEditar.IdCategoria || 0}</ModalHeader>
         <ModalBody>
           <div className="form-group">
             <label>Nombre de la categoria:</label>
@@ -39,13 +39,12 @@ const EditarCategoria = ({activarEdicion, funcionCerrarFormEdicion, categoriaEdi
               name="CategoriaName"
               onChange={handleChange}
             />
+
+          <button className="btn botoncito mt-3 titulosistema" onClick={() => actualizarCategoria()}>EDITAR</button>
+          {" | "}
+          <button className="btn btn-danger mt-3 text-light titulosistema" onClick={funcionCerrarFormEdicion}>CERRAR</button>
           </div>
         </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-warning mt-3" onClick={() => actualizarCategoria()}>EDITAR</button>
-          {" | "}
-          <button className="btn btn-danger mt-3" onClick={funcionCerrarFormEdicion}>CERRAR</button>
-        </ModalFooter>
       </Modal>
     </>
   );

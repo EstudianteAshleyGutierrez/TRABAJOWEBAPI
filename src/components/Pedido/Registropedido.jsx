@@ -134,18 +134,19 @@ var nrofilas=data.length
   return (
     <Fragment>
       
-        <h2 className='text-center'><b>REGISTRO DE PEDIDOS</b></h2>
+        <h1 className='text-center titulosistema'><b>REGISTRO DE PEDIDOS</b></h1>
         <br/>
-        <div>
-              <h5 className='text-primary'>Cantidad de Pedidos: {nrofilas}</h5>
+       <br/>
+        <button className="btn botoncito " onClick={()=>abrircerrarModalInsertar()}>NUEVO PEDIDO</button>{"   "}
+        <button className='btn btn-danger text-light titulosistema' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
+      <br/>
+      <br/>
+      <div>
+              <h5 className='text-dark titulosistema'>Cantidad de Pedidos: {nrofilas}</h5>
       </div>
        <br/>
-        <button className="btn btn-success " onClick={()=>abrircerrarModalInsertar()}>NUEVO PEDIDO</button>{"   "}
-        <button className='btn btn-danger' onClick={()=>cerrarSesion()}>CERRAR SESION</button>{"   "}
-      <br/>
-       <br/>
-       <table className='table table-bordered table- table-striped'>
-        <thead>
+       <table className='table table-bordered table- table-hover'>
+        <thead className='text-center text-light titulosistema table-dark'>
             <tr>
             <th>Id Pedido</th>
             <th>Fecha Pedido</th>
@@ -154,16 +155,16 @@ var nrofilas=data.length
             <th>Acciones</th>
             </tr>
           </thead>
-          <tbody className='text-start'>
+          <tbody className='text-center'>
             {data.map(ordenes=>(
             <tr key={ordenes.idPedido}>
-              <td>{ordenes.idPedido}</td>
+              <td c>{ordenes.idPedido}</td>
               <td>{ordenes.fechaPedido}</td>
               <td>{ordenes.fechaEntrega}</td>
               <td>{ordenes.idProveedor}</td>
            
               <td>
-                  <button className='btn btn-warning' onClick={()=>seleccionarGestor(ordenes,"Editar")} >EDITAR</button>{"  "}
+                  <button className='btn botoncito' onClick={()=>seleccionarGestor(ordenes,"Editar")} >EDITAR</button>{"  "}
               </td>
             </tr>
             ))}

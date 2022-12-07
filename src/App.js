@@ -23,16 +23,16 @@ function App() {
      <Router>
      <div className='container mt-5'>
         <div className='btn-group p-5'>
-          <Link to="/Cargaselectproveedor" className='btn btn-info'>Consulta Pedido por Proveedor</Link>
-          <Link to="/PedidoporAño" className='btn btn-info'>Pedido por el Año Pedido</Link>
-          <Link to="/RegistrarProveedor" className='btn btn-info'>Consulta Y Registro Proveedor</Link>
-          <Link to="/RegistrarFactura" className='btn btn-info'>Lista de Facturas</Link>
-          <Link to="/RegistrarPedido" className='btn btn-info'>Registro de Pedido</Link>
-          <Link to="/RegistrarProducto" className='btn btn-info'>Consulta y Registro de Producto</Link>
-          <Link to="/RegistrarCategoria" className='btn btn-info'>Consulta y Registro de Categoria</Link>
-          <Link to="/RegistrarDetalle" className='btn btn-info'>Consulta y Registro de Detalle</Link>
-          <Link to="/Grafico" className='btn btn-warning'>Grafico Estadistico de Facturas</Link>
-          <Link to="/Presentacion" className='btn btn-secondary'>TERMINOS Y CONDICIONES</Link>
+          <Link to="/Cargaselectproveedor" className='btn botoncito'>Consulta Pedido por Proveedor</Link>
+          <Link to="/PedidoporAño" className='btn botoncito1'>Pedido por el Año Pedido</Link>
+          <Link to="/RegistrarProveedor" className='btn botoncito'>Consulta Y Registro Proveedor</Link>
+          <Link to="/RegistrarFactura" className='btn botoncito1'>Lista de Facturas</Link>
+          <Link to="/RegistrarPedido" className='btn botoncito'>Registro de Pedido</Link>
+          <Link to="/RegistrarProducto" className='btn botoncito1'>Consulta y Registro de Producto</Link>
+          <Link to="/RegistrarCategoria" className='btn botoncito'>Consulta y Registro de Categoria</Link>
+          <Link to="/RegistrarDetalle" className='btn botoncito1'>Consulta y Registro de Detalle</Link>
+          <Link to="/Grafico" className='btn btn-warning text-dark titulosistema'>Grafico Estadistico de Facturas</Link>
+          <Link to="/Presentacion" className='btn btn-danger text-light titulosistema'>TERMINOS Y CONDICIONES</Link>
           
          
           {/* <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link> */}

@@ -53,7 +53,7 @@ import logo from '../../image/a.png'
   render() {
     return (
       <div style={{textAlign:'center'}}><br/>
-          <Button onClick={this.pdfGenerate} className='btn btn-danger'>DESCARGAR EL PDF DE TERMINOS Y CONDICIONES DEL SISTEMA</Button>
+          <Button onClick={this.pdfGenerate} className='btn btn-danger text-light titulosistema'>DESCARGAR EL PDF DE TERMINOS Y CONDICIONES DEL SISTEMA</Button>
       </div>
     )
   }

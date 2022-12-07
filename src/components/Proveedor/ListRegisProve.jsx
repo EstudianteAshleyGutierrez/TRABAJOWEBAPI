@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './css/Proveedor.css'
 import axios from "axios";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Cookies from "universal-cookie";
@@ -174,67 +175,86 @@ const ListRegisProve = () => {
 
   return (
     <div>
-      <h4>Buscar a Proveedor: </h4>
+      <h1 className='text-center titulosistema mb-3'><b>REGISTRO Y CONSULTA DE PROVEEDOR</b></h1>
+      <br />
+      <br />
+
+      <div className="col-lg-5 float-lg-start card mb-3">
+        <div className="card-header bg-dark ">
+          <h5 className="text-center text-light titulosistema mt-2 mb-2">BUSCAR UN PROVEEDOR </h5>
+        </div>
+      <div className="card-body form-group">
       <div className="containerInput">
         <input
-          className="form-control inputbuscar w-50 "
+          className="form-control inputbuscar "
           value={busqueda}
           id="busqueda"
           onChange={handlebusqueda}
           placeholder="Ingrese el proveedor.."
         />
+      </div>   
+      </div>
       </div>
       <br />
-
-      <div>
-        <h5 className="text-primary">Cantidad de Proveedores: {nrofilas}</h5>
-      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <button
-        className="btn btn-success "
+        className="btn botoncito "
         onClick={() => abrircerrarModalInsertar()}
       >
         NUEVO PROVEEDOR
       </button>
       {"   "}
-      <button className="btn btn-danger" onClick={() => cerrarSesion()}>
+      <button className="btn btn-danger text-light titulosistema" onClick={() => cerrarSesion()}>
         CERRAR SESION
       </button>
       {"   "}
-      <br />
-      <br />
-      <CSVLink data={data} className="btn btn-warning mb-3">EXPORTAR ARCHIVO</CSVLink>
-      <table className="table table-bordered table- table-striped">
-        <thead>
+      <CSVLink data={data} className="btn btn-warning text-dark titulosistema">EXPORTAR ARCHIVO</CSVLink>
+
+      <br/>
+      <br/>
+      <br/>
+      <div>
+        <h5 className="text-dark titulosistema">Cantidad de Proveedores: {nrofilas}</h5>
+      </div>
+      <br/>
+
+
+      <table className="table table-bordered table- table-hover">
+        <thead className="table-dark text-center text-light titulosistema">
           <tr>
-            <th>Id Proveedor</th>
-            <th>Nombre Proveedor</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Email</th>
-            <th>Estado</th>
-            <th>Acciones</th>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>DIRECCION</th>
+            <th>TELEFONO</th>
+            <th>EMAIL</th>
+            <th>ESTADO</th>
+            <th>ACCIONES</th>
           </tr>
         </thead>
         <tbody className="text-start">
           {data.map((ordenes) => (
             <tr key={ordenes.idProveedor}>
-              <td>{ordenes.idProveedor}</td>
+              <td className="text-center">{ordenes.idProveedor}</td>
               <td>{ordenes.nombreProveedor}</td>
               <td>{ordenes.direccion}</td>
-              <td>{ordenes.telefono}</td>
+              <td className="text-center">{ordenes.telefono}</td>
               <td>{ordenes.email}</td>
-              <td>{ordenes.estado}</td>
+              <td className="text-center">{ordenes.estado}</td>
               <td>
                 <button
-                  className="btn btn-warning"
+                  className="btn btn-warning text-dark titulosistema"
                   onClick={() => seleccionarGestor(ordenes, "Editar")}
                 >
                   EDITAR
                 </button>
                 {" | "}
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-danger text-light titulosistema"
                   onClick={() => seleccionarGestor(ordenes, "Eliminar")}
                 >
                   ELIMINAR
@@ -246,7 +266,7 @@ const ListRegisProve = () => {
       </table>
 
       <Modal isOpen={modalInsertar}>
-        <ModalHeader>Registrar Proveedor</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema text-center">REGISTRAR PROVEEDOR</ModalHeader>
         <ModalBody>
           <div className="form-group">
             <label>Nombre:</label>
@@ -264,7 +284,6 @@ const ListRegisProve = () => {
               name="direccion"
               onChange={handlechange}
             />
-            <br />
             <br />
             <label>Telefono:</label>
             <input
@@ -293,12 +312,12 @@ const ListRegisProve = () => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-info" onClick={() => petiPost()}>
+          <button className="btn botoncito " onClick={() => petiPost()}>
             Registrar
           </button>
           {" |"}
           <button
-            className="btn btn-danger"
+            className="btn btn-danger text-light titulosistema"
             onClick={() => abrircerrarModalInsertar()}
           >
             Cancelar
@@ -307,7 +326,7 @@ const ListRegisProve = () => {
       </Modal>
 
       <Modal isOpen={modalEditar}>
-        <ModalHeader>Editar Proveedor</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema text-center">EDITAR PROVEEDOR</ModalHeader>
         <ModalBody>
           <div className="form-group">
             <label>IdProveedor:</label>
@@ -335,7 +354,6 @@ const ListRegisProve = () => {
               onChange={handlechange}
               value={gestorSeleccionado && gestorSeleccionado.direccion}
             />
-            <br />
             <br />
             <label>Telefono:</label>
             <input
@@ -367,12 +385,12 @@ const ListRegisProve = () => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-info" onClick={() => petiPUT()}>
+          <button className="btn botoncito" onClick={() => petiPUT()}>
             Actualizar Dato
           </button>
           {" |"}
           <button
-            className="btn btn-danger"
+            className="btn btn-danger text-light titulosistema"
             onClick={() => abrircerrarModalEditar()}
           >
             Cancelar

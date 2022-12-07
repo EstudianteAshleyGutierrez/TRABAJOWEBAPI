@@ -2,10 +2,31 @@
 
 .titulosistema{
  text-align: center;
- color: rgb(145, 64, 6);
+ color: rgb(46, 156, 170);
  font-family: 'Preahvihear', sans-serif;
 }
+
+.sub{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Preahvihear', sans-serif;
+   }
+
 .user{
     font-family: 'Acme', sans-serif;
+    color: rgb(255, 255, 255);
     font-size: 32pt;
 }
+
+.botoncito{
+    color: rgb(255, 255, 255);
+    font-family: 'Preahvihear', sans-serif;
+    background-color:rgb(46, 156, 170);
+    
+   }
+
+   .botoncito1{
+    color: rgb(255, 255, 255);
+    font-family: 'Preahvihear', sans-serif;
+    background-color:rgb(53, 143, 155);
+   }

@@ -36,18 +36,23 @@ const Registroproducto = () => {
 
   return (
     <>
-      <h4>Buscar un Producto: </h4>
-      <div className="containerInput">
-        <input
-          className="form-control inputbuscar w-50 "
-          value={nombreProducto || ""}
-          id="busqueda"
-          onChange={handleChange}
-          placeholder="Ingrese el producto.."
-        />
+      <h1 className='text-center titulosistema mb-3'><b>REGISTRO Y CONSULTA DE PRODUCTO</b></h1>
+      <br/>
+      <div className="col-lg-5 float-lg-start card mb-3">
+        <div className="card-header bg-dark ">
+          <h5 className="text-center text-light titulosistema mt-2 mb-2">BUSCAR UN PRODUCTO </h5>
+        </div>
+      <div className="card-body form-group">
+            <input
+              className="form-control inputbuscar "
+              value={nombreProducto || ""}
+              id="busqueda"
+              onChange={handleChange}
+              placeholder="Ingrese el producto.."
+            />      
       </div>
-      <br />
-
+    </div>
+    <br/>
       <Consultaproducto nombreProducto={nombreProducto} cerrarSesion={cerrarSesion} setNombreProducto={setNombreProducto} estadoPagina={estadoPagina} setEstadoPagina={setEstadoPagina}/>      
     </>
   );

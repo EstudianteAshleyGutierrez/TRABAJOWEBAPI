@@ -66,7 +66,7 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
   return (
     <>
       <Modal isOpen={eventoRegistro}>
-        <ModalHeader>Registro de detalle</ModalHeader>
+        <ModalHeader className="bg-dark text-light titulosistema text-center">REGISTRO DE DETALLE</ModalHeader>
         <ModalBody>
           <label className="form-label">Id del pedido: </label>
           <input name="IdPedido" type={"number"}  min ='1' max={nrofilas} className="form-control" onChange={handleChange}></input>
@@ -88,11 +88,11 @@ const RegistroDetalle = ({funcionCerrarRegistro, eventoRegistro, setEstadoPagina
           <input name="Fecha_Vencimiento" type={"date"} className="form-control" onChange={handleChange}></input>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-success" onClick={registrarDetalle}>
+          <button className="btn botoncito" onClick={registrarDetalle}>
             Registrar
           </button>
           {" | "}
-          <button className="btn btn-danger" onClick={funcionCerrarRegistro}>
+          <button className="btn btn-danger text-light titulosistema" onClick={funcionCerrarRegistro}>
             Cerrar
           </button>
         </ModalFooter>

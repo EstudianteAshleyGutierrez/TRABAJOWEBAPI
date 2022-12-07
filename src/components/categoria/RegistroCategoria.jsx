@@ -27,16 +27,13 @@ const RegistroCategoria = ({setEstadoPagina, estadoPagina}) => {
 
   return (
     <div className="col-lg-5 float-lg-start card mb-3">
-        <div className="card-header">
-            <h5>Registro de categoria</h5>
+        <div className="card-header bg-dark ">
+            <h3 className="text-center titulosistema text-light mt-3 mb-3">REGISTRAR CATEGORIA</h3>
         </div>
       <div className="card-body form-group">
-        <label>Nombre de la categoria:</label>
+        <label className="text-dark">Ingresar Nombre de la Categoria:</label>
         <input onChange={handleChangeNombre} className="form-control mt-3" type="text" name="nombre" />
-      </div>
-
-      <div className="card-footer mt-1 mb-1">
-        <button className="btn btn-primary" onClick={registrarCategoria}>REGISTRAR</button>
+        <button className="form-control btn botoncito mb-3 mt-3" onClick={registrarCategoria}>REGISTRAR</button>
       </div>
     </div>
   );

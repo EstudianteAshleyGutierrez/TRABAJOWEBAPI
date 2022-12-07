@@ -96,34 +96,35 @@ const Consultaproducto = ({
 
   return (
     <>
-      <div>
-        <h5 className="text-primary">
-          Cantidad de Productos: {cantidadProductos}
-        </h5>
-      </div>
-      <br />
+      <br/><br/><br/><br/><br/><br/>
+    
       <button
-        className="btn btn-success "
+        className="btn botoncito "
         onClick={() => activarRegistroProducto()}
       >
         NUEVO PRODUCTO
       </button>
       {"   "}
-      <button className="btn btn-danger" onClick={() => cerrarSesion()}>
+      <button className="btn btn-danger text-light titulosistema" onClick={() => cerrarSesion()}>
         CERRAR SESION
       </button>
       {"   "}
       <br />
+      <div>
+        <h5 className="text-dark mb-3 mt-3 titulosistema">
+          Cantidad de Productos : {cantidadProductos}
+        </h5>
+      </div>
       <br />
-      <table className="table table-bordered">
-        <thead className="table-primary">
-          <tr>
-            <th>Id Producto</th>
-            <th>Nombre Producto</th>
-            <th>Descripción</th>
-            <th>Id categoria</th>
-            <th>Imagen</th>
-            <th>Opcion</th>
+      <table className="table table-bordered table-hover">
+        <thead className="table-dark">
+          <tr className="text-light titulosistema">
+            <th className="text-center">CODIGO</th>
+            <th className="text-center">NOMBRE</th>
+            <th className="text-center">DESCRIPCION</th>
+            <th className="text-center">CODIGO CATEGORIA</th>
+            <th className="text-center">IMAGEN</th>
+            <th className="text-center">OPCIONES</th>
           </tr>
         </thead>
         <tbody className="text-start">
@@ -135,7 +136,7 @@ const Consultaproducto = ({
             >
               <td align="center">{product.IdProducto}</td>
               <td>{product.NombreProducto}</td>
-              <td>{product.descripcion}</td>
+              <td align="center">{product.descripcion}</td>
               <td align="center">{product.IdCategoria}</td>
               <td align="center">
                 {product.ImagenProducto === null ? (
@@ -157,7 +158,7 @@ const Consultaproducto = ({
               {/* <CampoEstado cambiarEstadoProducto={cambiarEstadoProducto} Estado={product.Estado} IdProducto={product.IdProducto} /> */}
               <td align="center">
                 <button
-                  className="btn btn-warning"
+                  className="btn botoncito"
                   /*id={"productoBtnEditarId"+product.IdProducto}*/
                   onClick={() => activarEditarProducto(product)}
                   /*disabled={product.Estado == "NO DISPONIBLE" ? true : false}*/

@@ -27,7 +27,7 @@ const ListRegisDet = () => {
 
   return (
     <>
-        <h4>Detalle Pedido Producto:</h4>
+        <h2 className='text-center titulosistema'><b>DETALLE PEDIDO PRODUCTO</b></h2>
         <ConsultaDetalle cerrarSesion={cerrarSesion}/>
     </>
   )
