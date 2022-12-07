@@ -16,7 +16,8 @@ import Registroproducto from './components/Productos/ListRegisProd';
 import ListRegisDet from './components/detPedPro/ListRegisDet';
 import Presentacion from './components/Factura/Presentacion';
 import Grafico from './components/Factura/Grafico';
-
+import Consumoapi from './components/Consumoapi';
+import Consultaporidioma from  './components/Consultaporidioma';
 function App() {
   return (
     <Fragment>
@@ -33,7 +34,7 @@ function App() {
           <Link to="/RegistrarDetalle" className='btn botoncito1'>Consulta y Registro de Detalle</Link>
           <Link to="/Grafico" className='btn btn-warning text-dark titulosistema'>Grafico Estadistico de Facturas</Link>
           <Link to="/Presentacion" className='btn btn-danger text-light titulosistema'>TERMINOS Y CONDICIONES</Link>
-          
+          <Link to="/ConsultaPaises" className='btn botoncito1'>Consulta de Paises con api Publica</Link>
          
           {/* <Link to="/Consultaproducto" className='btn btn-info'>Consulta de Producto</Link> */}
         </div>
@@ -52,6 +53,8 @@ function App() {
           <Route path='/RegistrarDetalle' element={<ListRegisDet/>}></Route>
           <Route path='/Presentacion' element={<Presentacion/>}></Route>
           <Route path='/Grafico' element={<Grafico/>}></Route>
+          <Route path='/ConsultaPaises' element={<Consumoapi/>}></Route>
+          <Route path='/Dtidiomas/:xidioma' element={<Consultaporidioma/>}/>
           {/* <Route path='/Consultaproducto' element={<Consultaproducto/>}></Route> */}
         </Routes>
 
