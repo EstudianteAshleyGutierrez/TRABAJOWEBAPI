@@ -50,7 +50,9 @@ const DtPedidoFactura = () => {
           {pedidos.map(x=>(
             <tr key={x.nomprod}>
             <td>{x.nomprod}</td>
-            <td>{x.img}</td>
+            <td>
+              <img src={x.img} alt={x.img} width={"110px"} height={"110px"}/>
+            </td>
             <td>{x.cantpedido}</td>
             <td>{x.precioprod}</td>
             <td>{x.nomprove}</td>
